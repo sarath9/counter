@@ -1,0 +1,81 @@
+:root{
+  --animation-duration: 0.9s;
+  --primary: orangered;
+  --secondary: green;
+  --white: #fff;
+}
+body{
+  display: flex;
+  background: #834869;
+background: -webkit-linear-gradient(top left, #834869, #270736);
+background: -moz-linear-gradient(top left, #834869, #270736);
+background: linear-gradient(to bottom right, #834869, #270736);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ 
+}
+* {
+  box-sizing: border-box;
+}
+
+.counter-container{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+.card{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px dotted var(--white);
+}
+.btn{
+  display: block;
+  width: 100%;
+  color: #fff;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background: var(--secondary);
+}
+.btn:hover{
+  background: var(--primary)
+}
+.disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}
+h1{
+  font-size: 5rem;
+  color: var(--white);
+}
+.card_1{
+  position: absolute;
+  top:0;
+}
+.card_2{
+  position: absolute;
+  top: 100%;
+}
+
+.up .card_1{
+  animation: move_top var(--animation-duration) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.up .card_2{
+  animation: move_top var(--animation-duration) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.animation{
+  animation: move_top var(--animation-duration) cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+@keyframes move_top{
+  to{
+    transform: translateY(-200px);
+  }
+
+}
